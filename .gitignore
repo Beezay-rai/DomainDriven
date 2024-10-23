@@ -1,0 +1,6 @@
+.vs
+DomainApp/bin
+DomainApp/obj
+
+EFCore/bin
+EFCore/obj

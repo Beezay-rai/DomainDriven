@@ -1,0 +1,12 @@
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\bin\Debug\net8.0\DBDK.deps.json
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\bin\Debug\net8.0\DBDK.dll
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\bin\Debug\net8.0\DBDK.pdb
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.csproj.AssemblyReference.cache
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.AssemblyInfoInputs.cache
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.AssemblyInfo.cs
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.csproj.CoreCompileInputs.cache
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.dll
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\refint\DBDK.dll
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\DBDK.pdb
+C:\Users\OnePoint-bijay\source\repos\DomainApp\DBDK\obj\Debug\net8.0\ref\DBDK.dll
