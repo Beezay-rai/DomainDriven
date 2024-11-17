@@ -5,10 +5,6 @@ VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainApp", "DomainApp\DomainApp.csproj", "{4E06E2E3-4157-43E2-B97A-8F06E1196A0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFcore", "EFcore\EFcore.csproj", "{CA657193-A55A-40F5-BEBB-AAC908B4883E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDK", "DBDK\DBDK.csproj", "{A56A3ECF-8416-440F-90C0-9243975E7DCD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{4E06E2E3-4157-43E2-B97A-8F06E1196A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E06E2E3-4157-43E2-B97A-8F06E1196A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E06E2E3-4157-43E2-B97A-8F06E1196A0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA657193-A55A-40F5-BEBB-AAC908B4883E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA657193-A55A-40F5-BEBB-AAC908B4883E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA657193-A55A-40F5-BEBB-AAC908B4883E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA657193-A55A-40F5-BEBB-AAC908B4883E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A56A3ECF-8416-440F-90C0-9243975E7DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A56A3ECF-8416-440F-90C0-9243975E7DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A56A3ECF-8416-440F-90C0-9243975E7DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A56A3ECF-8416-440F-90C0-9243975E7DCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

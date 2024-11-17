@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DomainApp.StructurePattern
+﻿namespace DomainApp.StructurePattern
 {
     public interface IColor
     {
@@ -33,7 +27,7 @@ namespace DomainApp.StructurePattern
 
     public class Circle : Shape
     {
-        IColor _color;
+        private IColor _color;
         public Circle(IColor color) : base(color)
         {
             _color = color;

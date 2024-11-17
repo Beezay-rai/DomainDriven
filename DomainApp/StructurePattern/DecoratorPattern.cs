@@ -52,10 +52,9 @@ namespace DomainApp.StructurePattern
         public SugarDecorator(ICoffee coffee) : base(coffee)
         {
         }
-
         public override int GetCost()
         {
-            var cost =base.GetCost();
+            var cost = base.GetCost();
             var costWithSugar = cost + 5;
             return costWithSugar;
         }
