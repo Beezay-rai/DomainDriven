@@ -15,13 +15,13 @@
         {
             string Product = "Available Product :\n";
 
-            foreach(var desc in products)
+            foreach (var desc in products)
             {
                 Product += desc.ProductDescription();
-                
+
             };
             return Product;
-                
+
         }
 
     }

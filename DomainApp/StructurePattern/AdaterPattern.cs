@@ -28,7 +28,7 @@
         {
             _player = player;
         }
-      
+
         public void Play()
         {
             _player.AdvancePlay();

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Examples" Version="2.9.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainApp\DomainApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OnePoint.PDK">
+      <HintPath>..\..\..\..\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
