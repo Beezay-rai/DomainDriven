@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Exterior")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3bb3e7fd8741d12f26349a7b10d4d965926284e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04263635f4b0da16da52a7e3e699df8918a1ab3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Exterior")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Exterior")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
