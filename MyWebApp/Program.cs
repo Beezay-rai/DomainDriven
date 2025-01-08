@@ -12,32 +12,32 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
+builder.Services.AddControllers();
     //.AddApplicationPart(Assembly.LoadFrom(builder.Configuration.GetSection("DllPath").Value + "Exterior.dll"));
-    .ConfigureApplicationPartManager(partManager =>
-{
-    var baseDllPath = builder.Configuration.GetSection("DllPath").Value;
-    foreach (var dllPath in Directory.GetFiles(baseDllPath, "*.dll"))
-    {
-        try
-        {
-            var assembly = Assembly.LoadFrom(dllPath);
-            partManager.ApplicationParts.Add(new AssemblyPart(assembly));
-            Console.WriteLine($"Loaded assembly from: {dllPath}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Failed to load assembly from {dllPath}: {ex.Message}");
-        }
-    }
+//    .ConfigureApplicationPartManager(partManager =>
+//{
+//    var baseDllPath = builder.Configuration.GetSection("DllPath").Value;
+//    foreach (var dllPath in Directory.GetFiles(baseDllPath, "*.dll"))
+//    {
+//        try
+//        {
+//            var assembly = Assembly.LoadFrom(dllPath);
+//            partManager.ApplicationParts.Add(new AssemblyPart(assembly));
+//            Console.WriteLine($"Loaded assembly from: {dllPath}");
+//        }
+//        catch (Exception ex)
+//        {
+//            Console.WriteLine($"Failed to load assembly from {dllPath}: {ex.Message}");
+//        }
+//    }
 
-});
+//});
 
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 //builder.Services.AddEndpointsApiExplorer();
-const string OpenApiFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\openapi.json";
+const string OpenApiFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\wwwroot\\api-doc\\openapi.json";
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -46,28 +46,36 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1",
         Description = "OpenAPI spec for dynamically loaded controllers."
     });
-    c.DocumentFilter<MyCustomDocument>();
-    using (var writer = new StreamWriter(OpenApiFilePath))
-    {
-        var json = System.Text.Json.JsonSerializer.Serialize(c.SwaggerDoc, new System.Text.Json.JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
-        writer.Write(json);
-    }
+    //c.DocumentFilter<MyCustomDocument>();
+    //using (var writer = new StreamWriter(OpenApiFilePath))
+    //{
+    //    var json = System.Text.Json.JsonSerializer.Serialize(c.SwaggerDoc, new System.Text.Json.JsonSerializerOptions
+    //    {
+    //        WriteIndented = true
+    //    });
+    //    writer.Write(json);
+    //}
 });
 
-//builder.Services.AddSwaggerGen(op =>
-//{
-//    op.DocumentFilter<MyCustomDocument>();
-//});
+
 var app = builder.Build();
+
+
+
+//using (var writer = new StreamWriter(OpenApiFilePath))
+//{
+//    var json = System.Text.Json.JsonSerializer.Serialize(c.SwaggerDoc, new System.Text.Json.JsonSerializerOptions
+//    {
+//        WriteIndented = true
+//    });
+//    writer.Write(json);
+//}
 
 app.UseStaticFiles();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
+    app.UseSwagger();
     app.UseSwaggerUI();
 }
 

@@ -8,6 +8,7 @@ using Newtonsoft.Json.Schema.Generation;
 using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text.Json;
 namespace DomainApp.Helper
 {
@@ -198,15 +199,7 @@ namespace DomainApp.Helper
 
         public static Dictionary<string, OpenApiSchema> GenerateSchemas(List<Type> schemasList)
         {
-            var generator = new JSchemaGenerator()
-            {
-                SchemaLocationHandling=SchemaLocationHandling.Definitions,
-                SchemaReferenceHandling=SchemaReferenceHandling.Objects,
-                DefaultRequired=Newtonsoft.Json.Required.AllowNull,
-                
-
-
-            };
+            var generator = new JSchemaGenerator();
             Dictionary<string, OpenApiSchema> response = new Dictionary<string, OpenApiSchema>();
             foreach (var schema in schemasList)
             {
@@ -234,16 +227,6 @@ namespace DomainApp.Helper
                 openApiSchema.Type = openApiType;
                 openApiSchema.Nullable = nullable;
             }
-
-            //if (jSchema.ExtensionData != null && jSchema.ExtensionData.Count > 0)
-            //{
-            //    openApiSchema.Reference = new OpenApiReference()
-            //    {
-            //        Type = ReferenceType.Schema,
-            //        Id=jSchema.ExtensionData.FirstOrDefault().Value.ToString
-            //    };
-            //}
-
 
             openApiSchema.Format = jSchema.Format;
 
@@ -401,16 +384,40 @@ namespace DomainApp.Helper
         }
 
 
-        public static void Try()
+        public static Dictionary<string, OpenApiSchema> GenerateSchemasTry(List<Type> schemasList)
         {
-            SchemaGeneratorOptions schemaGeneratorOptions = new SchemaGeneratorOptions()
+            Dictionary<string, OpenApiSchema> response = new Dictionary<string, OpenApiSchema>();
+            var schemaGeneratorOptions = new SchemaGeneratorOptions
+            {
+
+            };
+            JsonSerializerOptions a = new JsonSerializerOptions()
             {
                 
+                WriteIndented = true,
             };
-            ISerializerDataContractResolver serializerDataContractResolver = null;
+
+            
+            JsonSerializerDataContractResolver abc = new JsonSerializerDataContractResolver(a);
+
+            var schemaGenerator = new SchemaGenerator(schemaGeneratorOptions, abc);
+
+
+            foreach (var schemaType in schemasList)
+            {
+
+
+                var schema = schemaGenerator.GenerateSchema(schemaType, new SchemaRepository() { });
+
+                response.Add(schemaType.Name, schema);
+
+            }
+            return response;
+
+
 
         }
-       
+
     }
 
 

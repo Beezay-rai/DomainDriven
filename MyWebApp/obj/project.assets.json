@@ -1833,11 +1833,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\MyWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\MyWebApp.csproj",
       "projectName": "MyWebApp",
-      "projectPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\MyWebApp.csproj",
+      "projectPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\MyWebApp.csproj",
       "packagesPath": "C:\\Users\\OnePoint-bijay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\obj\\",
+      "outputPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\OnePoint-bijay\\AppData\\Roaming\\NuGet\\NuGet.Config",

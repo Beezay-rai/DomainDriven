@@ -1,16 +1,18 @@
 ﻿using DomainApp;
 using DomainApp.Custom;
-using DomainApp.HardCoded;
 using DomainApp.Helper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Writers;
 using OnePoint.PDK.CustomAttribute;
 using OnePoint.PDK.Enpoint;
-using Swashbuckle.AspNetCore.Annotations;
-using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore;
 using System.Reflection;
+using System;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
+using System.Text.Json;
 public class Program
 {
     public static void Main(string[] args)
@@ -96,157 +98,132 @@ public class Program
         //#endregion
         #endregion
 
-        //const string OpenApiFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\openapi.json";
-        //const string DllFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\bin\\Debug\\net8.0\\Exterior.dll";
+        const string OpenApiFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\openapi.json";
+        const string DllFilePath = "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\bin\\Debug\\net8.0\\Exterior.dll";
 
 
-        //using (var stream = new FileStream(OpenApiFilePath, FileMode.Open, FileAccess.ReadWrite))
-        //{
+        using (var stream = new FileStream(OpenApiFilePath, FileMode.Open, FileAccess.ReadWrite))
+        {
 
-        //    //OpenApiDocument openApiDocument = new OpenApiStreamReader().Read(stream, out var openApiDiagnostic);
-        //    OpenApiDocument openApiDocument = new OpenApiDocument();
+            //OpenApiDocument openApiDocument = new OpenApiStreamReader().Read(stream, out var openApiDiagnostic);
+            OpenApiDocument openApiDocument = new OpenApiDocument();
 
-        //    var assembly = Assembly.LoadFrom(DllFilePath);
-        //    var endpointTypes = assembly.GetTypes()
-        //              .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(CustomEndpoint)))
-        //              .ToList();
+            var assembly = Assembly.LoadFrom(DllFilePath);
+            var endpointTypes = assembly.GetTypes()
+                      .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(CustomEndpoint)))
+                      .ToList();
 
-        //    var schemas = assembly.GetTypes()
-        //              .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(CustomComponent)))
-        //              .ToList();
+            var schemas = assembly.GetTypes()
+                      .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(CustomComponent)))
+                      .ToList();
 
-        //    if (openApiDocument.Components == null)
-        //    {
-        //        openApiDocument.Components = new OpenApiComponents();
-        //    }
-
-
-        //    openApiDocument.Components.Schemas = OpenApiHelper.GenerateSchemas(schemas);
+            if (openApiDocument.Components == null)
+            {
+                openApiDocument.Components = new OpenApiComponents();
+            }
 
 
-        //    var controllersList = assembly.GetTypes()
-        //              .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ControllerBase)))
-        //              .ToList();
-        //    if (openApiDocument.Paths == null)
-        //        openApiDocument.Paths = new OpenApiPaths();
-
-        //    foreach (var endpointType in endpointTypes)
-        //    {
-        //        var customEndpointAttribute = endpointType.GetCustomAttributes<CustomEndpointAttribute>().FirstOrDefault();
-
-        //        if (customEndpointAttribute != null)
-        //        {
-        //            var path = customEndpointAttribute.Path.Replace("[controller]", endpointType.Name.Replace("Controller", ""));
-
-        //            var methods = endpointType.GetMethod("Execute");
-
-        //            var httpMethodAttr = customEndpointAttribute.Method.ToUpper();
-        //            OperationType operationType = httpMethodAttr switch
-        //            {
-        //                "GET" => OperationType.Get,
-        //                "POST" => OperationType.Post,
-        //                "PUT" => OperationType.Put,
-        //                "Delete" => OperationType.Delete,
-        //                _ => throw new NotImplementedException($"Unsupported HTTP verb: {httpMethodAttr.GetType().Name}")
-        //            };
-
-        //            if (!openApiDocument.Paths.ContainsKey(path))
-        //            {
-        //                openApiDocument.Paths.Add(path, new OpenApiPathItem());
-        //            }
+            openApiDocument.Components.Schemas = OpenApiHelper.GenerateSchemasTry(schemas);
 
 
+            var controllersList = assembly.GetTypes()
+                      .Where(t => t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ControllerBase)))
+                      .ToList();
+            if (openApiDocument.Paths == null)
+                openApiDocument.Paths = new OpenApiPaths();
 
+            foreach (var endpointType in endpointTypes)
+            {
+                var customEndpointAttribute = endpointType.GetCustomAttributes<CustomEndpointAttribute>().FirstOrDefault();
 
-        //            var consume = endpointType.GetCustomAttributes<CustomConsume>();
+                if (customEndpointAttribute != null)
+                {
+                    var path = customEndpointAttribute.Path.Replace("[controller]", endpointType.Name.Replace("Controller", ""));
 
-        //            var openApiRequest = OpenApiHelper.GenerateOpenApiRequest(consume);
+                    var methods = endpointType.GetMethod("Execute");
 
-        //            var responses = endpointType.GetCustomAttributes<CustomProduceResponseTypeAttribute>();
+                    var httpMethodAttr = customEndpointAttribute.Method.ToUpper();
+                    OperationType operationType = httpMethodAttr switch
+                    {
+                        "GET" => OperationType.Get,
+                        "POST" => OperationType.Post,
+                        "PUT" => OperationType.Put,
+                        "Delete" => OperationType.Delete,
+                        _ => throw new NotImplementedException($"Unsupported HTTP verb: {httpMethodAttr.GetType().Name}")
+                    };
+
+                    if (!openApiDocument.Paths.ContainsKey(path))
+                    {
+                        openApiDocument.Paths.Add(path, new OpenApiPathItem());
+                    }
 
 
 
 
+                    var consume = endpointType.GetCustomAttributes<CustomConsume>();
 
-        //            var openApiResponses = OpenApiHelper.GenerateOpenApiResponses(responses);
+                    var openApiRequest = OpenApiHelper.GenerateOpenApiRequest(consume);
 
-
-        //            openApiDocument.Paths[path].Operations[operationType] = new OpenApiOperation()
-        //            {
-        //                Responses = openApiResponses,
-        //                RequestBody = openApiRequest,
-        //                Tags = new List<OpenApiTag> { new OpenApiTag { Name = endpointType.Name.Replace("Controller", "") } }
-        //            };
-        //        }
-        //    }
+                    var responses = endpointType.GetCustomAttributes<CustomProduceResponseTypeAttribute>();
 
 
 
 
 
-        //    var writer = new OpenApiJsonWriter(new StreamWriter(stream));
-        //    openApiDocument.SerializeAsV3(writer);
-        //    writer.Flush();
+                    var openApiResponses = OpenApiHelper.GenerateOpenApiResponses(responses);
 
 
-
-        //    //var openAPIErrors = openApiDocument.Validate(ValidationRuleSet.GetDefaultRuleSet());
-        //    //if (openAPIErrors.Count()>0)
-        //    //{
-
-        //    //    foreach (var error in openAPIErrors)
-        //    //    {
-        //    //        Console.WriteLine("Error Occured In "+ error.Pointer );
-        //    //        Console.WriteLine(error.Message);
-        //    //    }
-        //    //}
-        //    //else
-        //    //{
-        //    //    using (var stream2 = new FileStream(OpenApiFilePath, FileMode.Open))
-        //    //    {
-        //    //        var writer = new OpenApiJsonWriter(new StreamWriter(stream2));
-        //    //        openApiDocument.SerializeAsV3(writer);
-        //    //        writer.Flush();
-
-        //    //    }
-
-
-
-        //    //}
+                    openApiDocument.Paths[path].Operations[operationType] = new OpenApiOperation()
+                    {
+                        Responses = openApiResponses,
+                        RequestBody = openApiRequest,
+                        Tags = new List<OpenApiTag> { new OpenApiTag { Name = endpointType.Name.Replace("Controller", "") } }
+                    };
+                }
+            }
 
 
 
 
-        //}
 
-        //var serviceCollection = new ServiceCollection();
-        //serviceCollection.AddSwaggerGen(options =>
-        //{
-        //    options.DocumentFilter<MyCustomDocument>();
-        //    // Add basic Swagger document settings
-        //    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-        //    {
-        //        Title = "Console App API",
-        //        Version = "v1",
-        //        Description = "Swagger documentation generated from a console app"
-        //    });
-        //    var serviceProvider = serviceCollection.BuildServiceProvider();
-        //    var swaggerGen = serviceProvider.GetRequiredService<ISwaggerProvider>();
-        //    var swaggerDoc = swaggerGen.GetSwagger("v1");
-        //    using (var writer = new StreamWriter(OpenApiFilePath))
-        //    {
-        //        var json = System.Text.Json.JsonSerializer.Serialize(swaggerDoc, new System.Text.Json.JsonSerializerOptions
-        //        {
-        //            WriteIndented = true
-        //        });
-        //        writer.Write(json);
-        //    }
-
-        //});
+            var writer = new OpenApiJsonWriter(new StreamWriter(stream));
+            openApiDocument.SerializeAsV3(writer);
+            writer.Flush();
 
 
-        var hardcoded = new HardCoded();
-        hardcoded.Generate();
+
+            //var openAPIErrors = openApiDocument.Validate(ValidationRuleSet.GetDefaultRuleSet());
+            //if (openAPIErrors.Count()>0)
+            //{
+
+            //    foreach (var error in openAPIErrors)
+            //    {
+            //        Console.WriteLine("Error Occured In "+ error.Pointer );
+            //        Console.WriteLine(error.Message);
+            //    }
+            //}
+            //else
+            //{
+            //    using (var stream2 = new FileStream(OpenApiFilePath, FileMode.Open))
+            //    {
+            //        var writer = new OpenApiJsonWriter(new StreamWriter(stream2));
+            //        openApiDocument.SerializeAsV3(writer);
+            //        writer.Flush();
+
+            //    }
+
+
+
+            //}
+
+
+
+
+
+
+        }
+
+
 
     }
 

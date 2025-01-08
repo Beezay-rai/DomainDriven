@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\Exterior.csproj": {}
+    "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\Exterior.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\DomainApp.csproj": {
+    "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\DomainApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\DomainApp.csproj",
+        "projectUniqueName": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\DomainApp.csproj",
         "projectName": "DomainApp",
-        "projectPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\DomainApp.csproj",
+        "projectPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\DomainApp.csproj",
         "packagesPath": "C:\\Users\\OnePoint-bijay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\obj\\",
+        "outputPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OnePoint-bijay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -107,14 +107,14 @@
         }
       }
     },
-    "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\Exterior.csproj": {
+    "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\Exterior.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\Exterior.csproj",
+        "projectUniqueName": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\Exterior.csproj",
         "projectName": "Exterior",
-        "projectPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\Exterior.csproj",
+        "projectPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\Exterior.csproj",
         "packagesPath": "C:\\Users\\OnePoint-bijay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\obj\\",
+        "outputPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\OnePoint-bijay\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,8 +132,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\DomainApp.csproj": {
-                "projectPath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\DomainApp\\DomainApp.csproj"
+              "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\DomainApp.csproj": {
+                "projectPath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\DomainApp\\DomainApp.csproj"
               }
             }
           }

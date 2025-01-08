@@ -19,6 +19,7 @@ namespace DomainApp
         [Required]
         [MinLength(4)]
         public string Title { get; set; }
+        public string Name { get; set; }
     }
     public class NSwagtry
     {

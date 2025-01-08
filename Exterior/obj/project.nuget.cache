@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4GTgyL5/50Y=",
+  "dgSpecHash": "8EbxTmMZ3Ng=",
   "success": true,
-  "projectFilePath": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\Exterior\\Exterior.csproj",
+  "projectFilePath": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\Exterior\\Exterior.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OnePoint-bijay\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\OnePoint-bijay\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

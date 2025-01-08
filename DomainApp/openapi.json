@@ -1,15 +1,6 @@
 {
   "openapi": "3.0.1",
-  "info": {
-    "title": "My API",
-    "description": "API documentation generated manually",
-    "contact": {
-      "name": "Your Name",
-      "url": "https://example.com",
-      "email": "your.email@example.com"
-    },
-    "version": "v1"
-  },
+  "info": { },
   "paths": {
     "/api/v1/notification/send": {
       "post": {
@@ -17,27 +8,38 @@
           "FonePay"
         ],
         "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FonePayNotificationRequestModel"
-              }
-            }
-          }
+          "content": { }
         },
         "responses": {
-          "429": {
-            "description": "Success",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/FonePayErrorModel"
                 },
                 "example": {
-                  "timestamp": "21/11/2024 11:16:15 AM",
-                  "status": 200,
-                  "error": "Success",
-                  "message": "Request successful",
+                  "timestamp": "24/11/2024 10:30:29 AM",
+                  "status": 403,
+                  "error": "Forbidden",
+                  "message": "Invalid authorization data",
+                  "path": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonePayErrorModel"
+                },
+                "example": {
+                  "timestamp": "24/11/2024 10:30:29 AM",
+                  "status": 404,
+                  "error": "Not Found !",
+                  "message": "API Not Found",
                   "path": null
                 }
               }
@@ -51,10 +53,61 @@
                   "$ref": "#/components/schemas/FonePayErrorModel"
                 },
                 "example": {
-                  "timestamp": "21/11/2024 5:01:15 PM",
+                  "timestamp": "24/11/2024 10:30:29 AM",
                   "status": 400,
                   "error": "Bad Request",
                   "message": "Validation Error",
+                  "path": null
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonePayErrorModel"
+                },
+                "example": {
+                  "timestamp": "24/11/2024 4:45:29 AM",
+                  "status": 502,
+                  "error": "Bad Gateway",
+                  "message": "Connection Timeout",
+                  "path": null
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonePayErrorModel"
+                },
+                "example": {
+                  "timestamp": "24/11/2024 10:30:29 AM",
+                  "status": 500,
+                  "error": "Internal Error",
+                  "message": "Contact With Error",
+                  "path": null
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonePayErrorModel"
+                },
+                "example": {
+                  "timestamp": "24/11/2024 4:45:29 AM",
+                  "status": 429,
+                  "error": "Too Many Request",
+                  "message": "Rate Limit Exeeced",
                   "path": null
                 }
               }
@@ -66,99 +119,9 @@
   },
   "components": {
     "schemas": {
-      "FonePayErrorModel": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "integer"
-          },
-          "error": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "path": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "FonePayNotificationRequestModel": {
-        "type": "object",
-        "properties": {
-          "mobileNumber": {
-            "minLength": 2,
-            "type": "string"
-          },
-          "remark1": {
-            "maxLength": 5,
-            "type": "string",
-            "nullable": true
-          },
-          "retrievalReferenceNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "amount": {
-            "type": "string"
-          },
-          "merchantId": {
-            "type": "string",
-            "nullable": true
-          },
-          "terminalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "uniqueId": {
-            "type": "string",
-            "nullable": true
-          },
-          "properties": {
-            "$ref": "#/components/schemas/FonePayNotificationRequestProp"
-          }
-        }
-      },
-      "FonePayNotificationRequestProp": {
-        "type": "object",
-        "properties": {
-          "txnDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "secondaryMobileNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "sessionSrlNo": {
-            "type": "string",
-            "nullable": true
-          },
-          "commission": {
-            "type": "string",
-            "nullable": true
-          },
-          "initiator": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      }
+      "FonePayErrorModel": { },
+      "FonePayNotificationRequestModel": { },
+      "FonePayNotificationRequestProp": { }
     }
   }
 }
