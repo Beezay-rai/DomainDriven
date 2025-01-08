@@ -23,8 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnePoint.PDK\OnePoint.PDK.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="OnePoint.PDK">
-      <HintPath>..\..\..\..\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.dll</HintPath>
+      <HintPath>..\..\..\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.dll</HintPath>
     </Reference>
   </ItemGroup>
 

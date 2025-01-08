@@ -1,18 +1,11 @@
-﻿using DomainApp;
-using DomainApp.Custom;
+﻿using DomainApp.Custom;
 using DomainApp.Helper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Writers;
 using OnePoint.PDK.CustomAttribute;
 using OnePoint.PDK.Enpoint;
-using Swashbuckle.AspNetCore;
 using System.Reflection;
-using System;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
-using System.Text.Json;
 public class Program
 {
     public static void Main(string[] args)

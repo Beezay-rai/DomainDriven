@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MRe1CVY/OpMJJ0shHZlgfzh9EjCe4p/cGOLvZYDuuhc=",
+  "Hash": "/1N0mcHn/aelk/EcrFxXCC3876iq8nYcqIGOFuOyN48=",
   "Source": "MyWebApp",
   "BasePath": "_content/MyWebApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MyWebApp\\wwwroot",
       "Source": "MyWebApp",
-      "ContentRoot": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\wwwroot\\",
       "BasePath": "_content/MyWebApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\wwwroot\\api-doc\\openapi.json",
+      "Identity": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\wwwroot\\api-doc\\openapi.json",
       "SourceId": "MyWebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\OnePoint-bijay\\source\\repos\\DomainApp\\MyWebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\OnePoint-bijay\\Desktop\\Projects\\MyProjects\\DomainApp\\MyWebApp\\wwwroot\\",
       "BasePath": "_content/MyWebApp",
       "RelativePath": "api-doc/openapi.json",
       "AssetKind": "All",

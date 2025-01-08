@@ -1,0 +1,26 @@
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.deps.json
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.pdb
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.csproj.AssemblyReference.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.AssemblyInfoInputs.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.AssemblyInfo.cs
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.csproj.CoreCompileInputs.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.sourcelink.json
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\refint\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.pdb
+C:\Users\OnePoint-bijay\Desktop\Projects\OfficeProject\API Management\OnePoint.PDK\obj\Debug\net8.0\ref\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.deps.json
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\bin\Debug\net8.0\OnePoint.PDK.pdb
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.csproj.AssemblyReference.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.AssemblyInfoInputs.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.AssemblyInfo.cs
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.csproj.CoreCompileInputs.cache
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.sourcelink.json
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\refint\OnePoint.PDK.dll
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\OnePoint.PDK.pdb
+C:\Users\OnePoint-bijay\Desktop\Projects\MyProjects\DomainApp\OnePoint.PDK\obj\Debug\net8.0\ref\OnePoint.PDK.dll
